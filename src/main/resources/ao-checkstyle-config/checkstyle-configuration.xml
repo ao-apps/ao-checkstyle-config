@@ -37,9 +37,7 @@
   <!-- Checks for whitespace                               -->
   <!-- See http://checkstyle.org/config_whitespace.html -->
   <module name="FileTabCharacter">
-    <!-- Begin AO Removed (TODO: Convert all tabs to two-space indent, then use default)
     <property name="eachLine" value="true"/>
-         End AO Removed -->
   </module>
 
   <module name="LineLength">
@@ -48,7 +46,7 @@
     <property name="max" value="100"/>
          End AO Removed -->
     <!-- Begin AO Added -->
-    <property name="max" value="120" />
+    <property name="max" value="200" />
     <!-- End AO Added -->
     <property name="ignorePattern" value="^package.*|^import.*|a href|href|http://|https://|ftp://"/>
   </module>
@@ -369,7 +367,4 @@
       <property name="optional" value="true"/>
     </module>
   </module>
-  <!-- Begin AO Added (TODO: Convert all tabs to two-space indent, then remove this) -->
-  <property name="tabWidth" value="2" />
-  <!-- End AO Added -->
 </module>
