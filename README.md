@@ -19,7 +19,7 @@ Default [Checkstyle](https://checkstyle.org/) configuration for AO projects.
 AO style is based on [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html),
 but allows up to 200 characters per line.  Our editors are set to indicate 120 character lines, but additional
 width may be used when stylistically advantageous.  With current beautiful 4k monitors and deeply nested content
-(such as when using [AO Fluent HTML](https://github.com/ao-apps/ao-fluent-html), 100 characters really isn't enough.
+(such as when using [AO Fluent HTML](https://github.com/ao-apps/ao-fluent-html)), 100 characters really isn't enough.
 
 ## Project Links
 * [Project Home](https://oss.aoapps.com/checkstyle-config/)
