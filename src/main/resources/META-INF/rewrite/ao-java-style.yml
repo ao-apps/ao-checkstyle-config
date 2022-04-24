@@ -1,0 +1,40 @@
+#
+# ao-checkstyle-config - Default Checkstyle configuration for AO projects.
+# Copyright (C) 2022  AO Industries, Inc.
+#     support@aoindustries.com
+#     7262 Bull Pen Cir
+#     Mobile, AL 36695
+#
+# This file is part of ao-checkstyle-config.
+#
+# ao-checkstyle-config is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Lesser General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# ao-checkstyle-config is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Lesser General Public License for more details.
+#
+# You should have received a copy of the GNU Lesser General Public License
+# along with ao-checkstyle-config.  If not, see <https://www.gnu.org/licenses/>.
+#
+
+#
+# The current implementation of google-java-format.yml seems incomplete, such as not setting the indent size
+# TODO: Review this on rewrite-maven-plugin > 4.22.2 to see if this file is still required.
+#
+# See https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/resources/META-INF/rewrite/google-java-format.yml
+#
+---
+type: specs.openrewrite.org/v1beta/style
+name: com.aoapps.checkstyle.config.AoJavaFormat
+displayName: AO java format
+styleConfigs:
+  - org.openrewrite.java.style.TabsAndIndentsStyle:
+      useTabCharacter: false
+      tabSize: 2
+      indentSize: 2
+      continuationIndent: 4
+      indentsRelativeToExpressionStart: false
