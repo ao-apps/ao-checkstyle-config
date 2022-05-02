@@ -34,7 +34,7 @@ along with ao-checkstyle-config.  If not, see <https://www.gnu.org/licenses/>.
     title="@{documented.name}"
     description="@{documented.description}"
     datePublished="2022-04-14T21:16:36-05:00"
-    dateModified="2022-04-19T20:58:39-05:00"
+    dateModified="2022-05-02T01:56:40-05:00"
   >
     <core:child page="changelog.jspx" />
     <header>
@@ -65,6 +65,9 @@ along with ao-checkstyle-config.  If not, see <https://www.gnu.org/licenses/>.
       but allows up to 200 characters per line.  Our editors are set to indicate 120 character lines, but additional
       width may be used when stylistically advantageous.  With current beautiful 4k monitors and deeply nested content
       (such as when using <core:link book="/fluent-html" page="/index.jspx" />), 100 characters really isn't enough.
+    </p>
+    <p>
+      AO style also allows long lines for Javadoc comments containing <code>@see</code> or <code>{@link</code>.
     </p>
     <section:nav label="Project Links">
       <ul>

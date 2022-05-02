@@ -42,13 +42,20 @@
 
   <module name="LineLength">
     <property name="fileExtensions" value="java"/>
-    <!-- Begin AO Removed
+    <!-- Begin ao-checkstyle-config removed
     <property name="max" value="100"/>
-         End AO Removed -->
-    <!-- Begin AO Added -->
+         End ao-checkstyle-config removed -->
+    <!-- Begin ao-checkstyle-config added -->
+    <!-- Allow up to 200 characters -->
     <property name="max" value="200" />
-    <!-- End AO Added -->
+    <!-- End ao-checkstyle-config added -->
+    <!-- Begin ao-checkstyle-config removed
     <property name="ignorePattern" value="^package.*|^import.*|a href|href|http://|https://|ftp://"/>
+         End ao-checkstyle-config removed -->
+    <!-- Begin ao-checkstyle-config added -->
+    <!-- Allow long javadoc links -->
+    <property name="ignorePattern" value="^package.*|^import.*|a href|href|http://|https://|ftp://|^ *\* .*(@see|\{@link)"/>
+    <!-- End ao-checkstyle-config added -->
   </module>
 
   <module name="TreeWalker">
