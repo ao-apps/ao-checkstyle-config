@@ -114,7 +114,6 @@ along with ao-checkstyle-config.  If not, see <https://www.gnu.org/licenses/>.
 
   <build>
     <plugins>
-      <!-- TODO: Automatically extract google_checks.xml, do a find/replace on the source, then fail if anything changed (see aoweb-struts) -->
       <plugin>
         <groupId>org.apache.felix</groupId><artifactId>maven-bundle-plugin</artifactId>
         <configuration>
@@ -123,6 +122,90 @@ along with ao-checkstyle-config.  If not, see <https://www.gnu.org/licenses/>.
             <Automatic-Module-Name>${module.name}</Automatic-Module-Name>
           </instructions>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId><artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>unpack.google_checks.xml</id><phase>initialize</phase><goals><goal>unpack</goal></goals>
+            <configuration>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>com.puppycrawl.tools</groupId><artifactId>checkstyle</artifactId><version>10.2</version>
+                  <type>jar</type>
+                  <includes>google_checks.xml</includes>
+                </artifactItem>
+              </artifactItems>
+            </configuration>
+          </execution>
+        </executions>
+        <dependencies>
+          <dependency>
+            <groupId>com.puppycrawl.tools</groupId><artifactId>checkstyle</artifactId><version>10.2</version>
+            <type>jar</type>
+            <exclusions><exclusion><groupId>*</groupId><artifactId>*</artifactId></exclusion></exclusions>
+          </dependency>
+        </dependencies>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId><artifactId>maven-antrun-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>generate.checkstyle-configuration.xml</id><phase>generate-sources</phase><goals><goal>run</goal></goals>
+            <configuration>
+              <target xmlns:if="ant:if" xmlns:unless="ant:unless">
+                <copy overwrite="true" todir="${project.build.directory}/substitute-templates">
+                  <fileset dir="${project.build.directory}/dependency" includes="google_checks.xml" />
+                </copy>
+                <replace
+                   file="${project.build.directory}/substitute-templates/google_checks.xml"
+                   summary="true"
+                   failOnNoReplacements="true"
+                 >
+                   <replacetoken><![CDATA[<property name="max" value="100"/>]]></replacetoken>
+                   <replacevalue><![CDATA[<!-- Begin ao-checkstyle-config removed
+    <property name="max" value="100"/>
+         End ao-checkstyle-config removed -->
+    <!-- Begin ao-checkstyle-config added -->
+    <!-- Allow up to 200 characters -->
+    <property name="max" value="200" />
+    <!-- End ao-checkstyle-config added -->]]></replacevalue>
+                </replace>
+                <replace
+                  file="${project.build.directory}/substitute-templates/google_checks.xml"
+                  summary="true"
+                  failOnNoReplacements="true"
+                >
+                  <replacetoken><![CDATA[<property name="ignorePattern" value="^package.*|^import.*|a href|href|http://|https://|ftp://"/>]]></replacetoken>
+                  <replacevalue><![CDATA[<!-- Begin ao-checkstyle-config removed
+    <property name="ignorePattern" value="^package.*|^import.*|a href|href|http://|https://|ftp://"/>
+         End ao-checkstyle-config removed -->
+    <!-- Begin ao-checkstyle-config added -->
+    <!-- Allow long javadoc links -->
+    <property name="ignorePattern" value="^package.*|^import.*|a href|href|http://|https://|ftp://|^ *\* .*(@see|\{@link)"/>
+    <!-- End ao-checkstyle-config added -->]]></replacevalue>
+                </replace>
+                <condition property="checkstyle-configuration.xml.matches" value="true">
+                  <filesmatch
+                    file1="${project.build.directory}/substitute-templates/google_checks.xml"
+                    file2="${project.basedir}/src/main/resources/ao-checkstyle-config/checkstyle-configuration.xml"
+                  />
+                </condition>
+                <copy
+                  unless:set="checkstyle-configuration.xml.matches"
+                  overwrite="true"
+                  file="${project.build.directory}/substitute-templates/google_checks.xml"
+                  tofile="${project.basedir}/src/main/resources/ao-checkstyle-config/checkstyle-configuration.xml"
+                />
+                <echo
+                  if:set="checkstyle-configuration.xml.matches"
+                  message="checkstyle-configuration.xml unchanged"
+                  level="info"
+                />
+              </target>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
