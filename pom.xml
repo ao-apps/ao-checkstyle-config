@@ -29,7 +29,7 @@ along with ao-checkstyle-config.  If not, see <https://www.gnu.org/licenses/>.
     <relativePath>../parent/pom.xml</relativePath>
   </parent>
 
-  <groupId>com.aoapps</groupId><artifactId>ao-checkstyle-config</artifactId><version>1.0.0-SNAPSHOT</version>
+  <groupId>com.aoapps</groupId><artifactId>ao-checkstyle-config</artifactId><version>1.0.0</version>
   <packaging>bundle</packaging>
 
   <properties>
@@ -78,7 +78,7 @@ along with ao-checkstyle-config.  If not, see <https://www.gnu.org/licenses/>.
     <connection>scm:git:git://github.com/ao-apps/ao-checkstyle-config.git</connection>
     <developerConnection>scm:git:git@github.com:ao-apps/ao-checkstyle-config.git</developerConnection>
     <url>https://github.com/ao-apps/ao-checkstyle-config</url>
-    <tag>HEAD</tag>
+    <tag>ao-checkstyle-config-1.0.0</tag>
   </scm>
 
   <issueManagement>
@@ -157,11 +157,7 @@ along with ao-checkstyle-config.  If not, see <https://www.gnu.org/licenses/>.
                 <copy overwrite="true" todir="${project.build.directory}/substitute-templates">
                   <fileset dir="${project.build.directory}/dependency" includes="google_checks.xml" />
                 </copy>
-                <replace
-                   file="${project.build.directory}/substitute-templates/google_checks.xml"
-                   summary="true"
-                   failOnNoReplacements="true"
-                 >
+                <replace file="${project.build.directory}/substitute-templates/google_checks.xml" summary="true" failOnNoReplacements="true">
                    <replacetoken><![CDATA[<property name="max" value="100"/>]]></replacetoken>
                    <replacevalue><![CDATA[<!-- Begin ao-checkstyle-config removed
     <property name="max" value="100"/>
@@ -171,11 +167,7 @@ along with ao-checkstyle-config.  If not, see <https://www.gnu.org/licenses/>.
     <property name="max" value="200" />
     <!-- End ao-checkstyle-config added -->]]></replacevalue>
                 </replace>
-                <replace
-                  file="${project.build.directory}/substitute-templates/google_checks.xml"
-                  summary="true"
-                  failOnNoReplacements="true"
-                >
+                <replace file="${project.build.directory}/substitute-templates/google_checks.xml" summary="true" failOnNoReplacements="true">
                   <replacetoken><![CDATA[<property name="ignorePattern" value="^package.*|^import.*|a href|href|http://|https://|ftp://"/>]]></replacetoken>
                   <replacevalue><![CDATA[<!-- Begin ao-checkstyle-config removed
     <property name="ignorePattern" value="^package.*|^import.*|a href|href|http://|https://|ftp://"/>
@@ -186,22 +178,10 @@ along with ao-checkstyle-config.  If not, see <https://www.gnu.org/licenses/>.
     <!-- End ao-checkstyle-config added -->]]></replacevalue>
                 </replace>
                 <condition property="checkstyle-configuration.xml.matches" value="true">
-                  <filesmatch
-                    file1="${project.build.directory}/substitute-templates/google_checks.xml"
-                    file2="${project.basedir}/src/main/resources/ao-checkstyle-config/checkstyle-configuration.xml"
-                  />
+                  <filesmatch file1="${project.build.directory}/substitute-templates/google_checks.xml" file2="${project.basedir}/src/main/resources/ao-checkstyle-config/checkstyle-configuration.xml" />
                 </condition>
-                <copy
-                  unless:set="checkstyle-configuration.xml.matches"
-                  overwrite="true"
-                  file="${project.build.directory}/substitute-templates/google_checks.xml"
-                  tofile="${project.basedir}/src/main/resources/ao-checkstyle-config/checkstyle-configuration.xml"
-                />
-                <echo
-                  if:set="checkstyle-configuration.xml.matches"
-                  message="checkstyle-configuration.xml unchanged"
-                  level="info"
-                />
+                <copy unless:set="checkstyle-configuration.xml.matches" overwrite="true" file="${project.build.directory}/substitute-templates/google_checks.xml" tofile="${project.basedir}/src/main/resources/ao-checkstyle-config/checkstyle-configuration.xml" />
+                <echo if:set="checkstyle-configuration.xml.matches" message="checkstyle-configuration.xml unchanged" level="info" />
               </target>
             </configuration>
           </execution>
