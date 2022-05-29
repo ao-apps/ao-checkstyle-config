@@ -29,7 +29,7 @@ along with ao-checkstyle-config.  If not, see <https://www.gnu.org/licenses/>.
     <relativePath>../parent/pom.xml</relativePath>
   </parent>
 
-  <groupId>com.aoapps</groupId><artifactId>ao-checkstyle-config</artifactId><version>1.0.0-POST-SNAPSHOT</version>
+  <groupId>com.aoapps</groupId><artifactId>ao-checkstyle-config</artifactId><version>1.1.0-SNAPSHOT</version>
   <packaging>bundle</packaging>
 
   <properties>
@@ -131,7 +131,7 @@ along with ao-checkstyle-config.  If not, see <https://www.gnu.org/licenses/>.
             <configuration>
               <artifactItems>
                 <artifactItem>
-                  <groupId>com.puppycrawl.tools</groupId><artifactId>checkstyle</artifactId><version>10.2</version>
+                  <groupId>com.puppycrawl.tools</groupId><artifactId>checkstyle</artifactId><version>10.3</version>
                   <type>jar</type>
                   <includes>google_checks.xml</includes>
                 </artifactItem>
@@ -141,7 +141,7 @@ along with ao-checkstyle-config.  If not, see <https://www.gnu.org/licenses/>.
         </executions>
         <dependencies>
           <dependency>
-            <groupId>com.puppycrawl.tools</groupId><artifactId>checkstyle</artifactId><version>10.2</version>
+            <groupId>com.puppycrawl.tools</groupId><artifactId>checkstyle</artifactId><version>10.3</version>
             <type>jar</type>
             <exclusions><exclusion><groupId>*</groupId><artifactId>*</artifactId></exclusion></exclusions>
           </dependency>

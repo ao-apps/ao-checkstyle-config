@@ -37,7 +37,7 @@ along with ao-checkstyle-config.  If not, see <https://www.gnu.org/licenses/>.
     shortTitle="Changelog"
     tocLevels="1"
     datePublished="2022-04-14T21:16:36-05:00"
-    dateModified="2022-05-13T20:29:44-05:00"
+    dateModified="2022-05-29T10:28:12-05:00"
   >
     <c:if test="${fn:endsWith('@{project.version}', '-SNAPSHOT') and !fn:endsWith('@{project.version}', '-POST-SNAPSHOT')}">
       <changelog:release
@@ -47,7 +47,11 @@ along with ao-checkstyle-config.  If not, see <https://www.gnu.org/licenses/>.
         artifactId="@{documented.artifactId}"
         repository="@{nexusUrl}content/repositories/snapshots/"
         scmUrl="@{project.scm.url}"
-      />
+      >
+        <ul>
+          <li>Updated to <ao:a href="https://checkstyle.org/releasenotes.html#Release_10.3">Checkstyle 10.3</ao:a>.</li>
+        </ul>
+      </changelog:release>
     </c:if>
 
     <changelog:release
