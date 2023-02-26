@@ -132,7 +132,7 @@ along with ao-checkstyle-config.  If not, see <https://www.gnu.org/licenses/>.
             <configuration>
               <artifactItems>
                 <artifactItem>
-                  <groupId>com.puppycrawl.tools</groupId><artifactId>checkstyle</artifactId><version>10.7.0</version>
+                  <groupId>com.puppycrawl.tools</groupId><artifactId>checkstyle</artifactId><version>10.8.0</version>
                   <type>jar</type>
                   <includes>google_checks.xml</includes>
                 </artifactItem>
@@ -142,7 +142,7 @@ along with ao-checkstyle-config.  If not, see <https://www.gnu.org/licenses/>.
         </executions>
         <dependencies>
           <dependency>
-            <groupId>com.puppycrawl.tools</groupId><artifactId>checkstyle</artifactId><version>10.7.0</version>
+            <groupId>com.puppycrawl.tools</groupId><artifactId>checkstyle</artifactId><version>10.8.0</version>
             <type>jar</type>
             <exclusions><exclusion><groupId>*</groupId><artifactId>*</artifactId></exclusion></exclusions>
           </dependency>
