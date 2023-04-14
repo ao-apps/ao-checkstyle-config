@@ -26,7 +26,7 @@ AO style also allows long lines for Javadoc comments containing `@see` or `{@lin
 ## Project Links
 * [Project Home](https://oss.aoapps.com/checkstyle-config/)
 * [Changelog](https://oss.aoapps.com/checkstyle-config/changelog)
-* [Maven Central Repository](https://central.sonatype.com/search?namespace=com.aoapps&q=a%3Aao-checkstyle-config)
+* [Maven Central Repository](https://central.sonatype.com/artifact/com.aoapps/ao-checkstyle-config)
 * [GitHub](https://github.com/ao-apps/ao-checkstyle-config)
 
 ## Contact Us
