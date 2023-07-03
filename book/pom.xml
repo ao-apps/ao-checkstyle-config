@@ -29,11 +29,11 @@ along with ao-checkstyle-config.  If not, see <https://www.gnu.org/licenses/>.
     <relativePath>../../parent/pom.xml</relativePath>
   </parent>
 
-  <groupId>com.aoapps</groupId><artifactId>ao-checkstyle-config-book</artifactId><version>1.2.0</version>
+  <groupId>com.aoapps</groupId><artifactId>ao-checkstyle-config-book</artifactId><version>1.2.0-POST-SNAPSHOT</version>
   <packaging>bundle</packaging>
 
   <properties>
-    <project.build.outputTimestamp>2023-07-03T19:33:27Z</project.build.outputTimestamp>
+    <project.build.outputTimestamp>2023-07-03T19:34:25Z</project.build.outputTimestamp>
     <module.name>com.aoapps.checkstyle.config.book</module.name>
     <!-- These values are copied from the project being documented -->
     <documented.artifactId>ao-checkstyle-config</documented.artifactId>
@@ -78,7 +78,7 @@ along with ao-checkstyle-config.  If not, see <https://www.gnu.org/licenses/>.
     <connection>scm:git:git://github.com/ao-apps/ao-checkstyle-config.git</connection>
     <developerConnection>scm:git:git@github.com:ao-apps/ao-checkstyle-config.git</developerConnection>
     <url>https://github.com/ao-apps/ao-checkstyle-config</url>
-    <tag>ao-checkstyle-config-book-1.2.0</tag>
+    <tag>HEAD</tag>
   </scm>
 
   <issueManagement>
