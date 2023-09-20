@@ -41,9 +41,6 @@ along with ao-checkstyle-config.  If not, see <https://www.gnu.org/licenses/>.
     <documented.artifactId>ao-checkstyle-config</documented.artifactId>
     <documented.name>AO Checkstyle Config</documented.name>
     <documented.description>Default Checkstyle configuration for AO projects.</documented.description>
-    <!-- Java 1.8 -->
-    <documented.javase.version>1.8</documented.javase.version>
-    <documented.javadoc.link.javase>${javadoc.link.javase.8}</documented.javadoc.link.javase>
 
     <description.html><![CDATA[Documentation for <a target="${javadoc.target}" href="${project.url}">${documented.name}</a> in <a target="${javadoc.target}" href="https://semanticcms.com/">SemanticCMS</a> format.]]></description.html>
   </properties>
