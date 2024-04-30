@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 ao-checkstyle-config - Default Checkstyle configuration for AO projects.
-Copyright (C) 2022, 2023  AO Industries, Inc.
+Copyright (C) 2022, 2023, 2024  AO Industries, Inc.
     support@aoindustries.com
     7262 Bull Pen Cir
     Mobile, AL 36695
@@ -37,7 +37,7 @@ along with ao-checkstyle-config.  If not, see <https://www.gnu.org/licenses/>.
     shortTitle="Changelog"
     tocLevels="1"
     datePublished="2022-04-14T21:16:36-05:00"
-    dateModified="2023-09-20T15:25:22Z"
+    dateModified="2024-04-30T08:17:04Z"
   >
     <c:set var="latestRelease" value="1.2.0" />
     <c:if test="${
@@ -55,6 +55,7 @@ along with ao-checkstyle-config.  If not, see <https://www.gnu.org/licenses/>.
       >
         <ul>
           <li>Minimum Java version changed from 1.8 to 11.</li>
+          <li>Updated to <ao:a href="https://checkstyle.org/releasenotes.html#Release_10.16.0">Checkstyle 10.16.0</ao:a>.</li>
         </ul>
       </changelog:release>
     </c:if>
