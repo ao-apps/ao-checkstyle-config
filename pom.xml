@@ -39,7 +39,7 @@ along with ao-checkstyle-config.  If not, see <https://www.gnu.org/licenses/>.
     <!-- Java 11 inherited from parent -->
     <!-- Matches "requireJavaVersion" from ao-oss-parent -->
     <!-- Plugin Dependencies -->
-    <com.puppycrawl.tools.checkstyle.version>10.24.0</com.puppycrawl.tools.checkstyle.version>
+    <com.puppycrawl.tools.checkstyle.version>10.25.0</com.puppycrawl.tools.checkstyle.version>
   </properties>
 
   <name>AO Checkstyle Config</name>
