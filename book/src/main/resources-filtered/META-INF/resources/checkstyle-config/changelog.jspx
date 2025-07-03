@@ -37,7 +37,7 @@ along with ao-checkstyle-config.  If not, see <https://www.gnu.org/licenses/>.
     shortTitle="Changelog"
     tocLevels="1"
     datePublished="2022-04-14T21:16:36-05:00"
-    dateModified="2025-04-30T19:41:57Z"
+    dateModified="2025-07-02T23:05:45Z"
   >
     <c:set var="latestRelease" value="1.3.0" />
     <c:if test="${
@@ -50,7 +50,6 @@ along with ao-checkstyle-config.  If not, see <https://www.gnu.org/licenses/>.
         version="@{project.version}"
         groupId="@{project.groupId}"
         artifactId="@{documented.artifactId}"
-        repository="@{nexusUrl}content/repositories/snapshots/"
         scmUrl="@{project.scm.url}"
       >
         <ul>
