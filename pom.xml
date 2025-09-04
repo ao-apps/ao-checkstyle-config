@@ -39,7 +39,14 @@ along with ao-checkstyle-config.  If not, see <https://www.gnu.org/licenses/>.
     <!-- Java 11 inherited from parent -->
     <!-- Matches "requireJavaVersion" from ao-oss-parent -->
     <!-- Plugin Dependencies -->
-    <com.puppycrawl.tools.checkstyle.version>11.0.0</com.puppycrawl.tools.checkstyle.version>
+    <!--
+    When updating the checkstyle version:
+    1) Rebuild the project locally `developer/bin/mim' to see if any configuration files are changed,
+       if so:
+    2) Bump to next -SNAPSHOT version if not already so
+    3) Add or update the entry in changelog.jspx
+    -->
+    <com.puppycrawl.tools.checkstyle.version>11.0.1</com.puppycrawl.tools.checkstyle.version>
   </properties>
 
   <name>AO Checkstyle Config</name>
