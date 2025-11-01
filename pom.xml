@@ -46,7 +46,7 @@ along with ao-checkstyle-config.  If not, see <https://www.gnu.org/licenses/>.
     2) Bump to next -SNAPSHOT version if not already so
     3) Add or update the entry in changelog.jspx
     -->
-    <com.puppycrawl.tools.checkstyle.version>11.0.1</com.puppycrawl.tools.checkstyle.version>
+    <com.puppycrawl.tools.checkstyle.version>12.1.1</com.puppycrawl.tools.checkstyle.version>
   </properties>
 
   <name>AO Checkstyle Config</name>
