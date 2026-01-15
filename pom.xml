@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 ao-checkstyle-config - Default Checkstyle configuration for AO projects.
-Copyright (C) 2022, 2023, 2024, 2025  AO Industries, Inc.
+Copyright (C) 2022, 2023, 2024, 2025, 2026  AO Industries, Inc.
     support@aoindustries.com
     7262 Bull Pen Cir
     Mobile, AL 36695
@@ -46,7 +46,7 @@ along with ao-checkstyle-config.  If not, see <https://www.gnu.org/licenses/>.
     2) Bump to next -SNAPSHOT version if not already so
     3) Add or update the entry in changelog.jspx
     -->
-    <com.puppycrawl.tools.checkstyle.version>12.3.0</com.puppycrawl.tools.checkstyle.version>
+    <com.puppycrawl.tools.checkstyle.version>13.0.0</com.puppycrawl.tools.checkstyle.version>
   </properties>
 
   <name>AO Checkstyle Config</name>
