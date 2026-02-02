@@ -37,7 +37,7 @@ along with ao-checkstyle-config.  If not, see <https://www.gnu.org/licenses/>.
     shortTitle="Changelog"
     tocLevels="1"
     datePublished="2022-04-14T21:16:36-05:00"
-    dateModified="2026-01-30T05:42:49Z"
+    dateModified="2026-02-02T20:02:55Z"
   >
     <c:set var="latestRelease" value="1.4.0" />
     <c:if test="${
@@ -51,7 +51,11 @@ along with ao-checkstyle-config.  If not, see <https://www.gnu.org/licenses/>.
         groupId="@{project.groupId}"
         artifactId="@{documented.artifactId}"
         scmUrl="@{project.scm.url}"
-      />
+      >
+        <ul>
+          <li>Updated to <ao:a href="https://checkstyle.org/releasenotes.html#Release_13.1.0">Checkstyle 13.1.0</ao:a>.</li>
+        </ul>
+      </changelog:release>
     </c:if>
 
     <changelog:release
