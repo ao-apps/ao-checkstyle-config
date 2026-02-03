@@ -25,7 +25,7 @@ along with ao-checkstyle-config.  If not, see <https://www.gnu.org/licenses/>.
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>com.aoapps</groupId><artifactId>ao-oss-parent</artifactId><version>1.26.0<!-- -POST-SNAPSHOT --></version>
+    <groupId>com.aoapps</groupId><artifactId>ao-oss-parent</artifactId><version>1.26.0-POST-SNAPSHOT</version>
     <relativePath>../parent/pom.xml</relativePath>
   </parent>
 
@@ -160,40 +160,25 @@ along with ao-checkstyle-config.  If not, see <https://www.gnu.org/licenses/>.
                 </copy>
                 <replace file="${project.build.directory}/substitute-templates/google_checks.xml" summary="true" failOnNoReplacements="true">
                    <replacetoken><![CDATA[<property name="max" value="100"/>]]></replacetoken>
-                   <replacevalue><![CDATA[<!-- Begin ao-checkstyle-config removed]]>
-<!--
---><![CDATA[    <property name="max" value="100"/>]]>
-<!--
---><![CDATA[         End ao-checkstyle-config removed -->]]>
-<!--
---><![CDATA[    <!-- Begin ao-checkstyle-config added -->]]>
-<!--
---><![CDATA[    <!-- Allow up to 200 characters -->]]>
-<!--
---><![CDATA[    <property name="max" value="200" />]]>
-<!--
+                   <replacevalue><![CDATA[<!-- Begin ao-checkstyle-config removed]]>&#xA;<!--
+--><![CDATA[    <property name="max" value="100"/>]]>&#xA;<!--
+--><![CDATA[         End ao-checkstyle-config removed -->]]>&#xA;<!--
+--><![CDATA[    <!-- Begin ao-checkstyle-config added -->]]>&#xA;<!--
+--><![CDATA[    <!-- Allow up to 200 characters -->]]>&#xA;<!--
+--><![CDATA[    <property name="max" value="200" />]]>&#xA;<!--
 --><![CDATA[    <!-- End ao-checkstyle-config added -->]]></replacevalue>
                 </replace>
                 <replace file="${project.build.directory}/substitute-templates/google_checks.xml" summary="true" failOnNoReplacements="true">
-                  <replacetoken><![CDATA[<property name="ignorePattern"]]>
-<!--
+                  <replacetoken><![CDATA[<property name="ignorePattern"]]>&#xA;<!--
 --><![CDATA[             value="^package.*|^import.*|href\s*=\s*&quot;[^&quot;]*&quot;|http://|https://|ftp://"/>]]></replacetoken>
-                  <replacevalue><![CDATA[<!-- Begin ao-checkstyle-config removed]]>
-<!--
---><![CDATA[    <property name="ignorePattern"]]>
-<!--
---><![CDATA[             value="^package.*|^import.*|href\s*=\s*&quot;[^&quot;]*&quot;|http://|https://|ftp://"/>]]>
-<!--
---><![CDATA[         End ao-checkstyle-config removed -->]]>
-<!--
---><![CDATA[    <!-- Begin ao-checkstyle-config added -->]]>
-<!--
---><![CDATA[    <!-- Allow long javadoc links -->]]>
-<!--
---><![CDATA[    <property name="ignorePattern"]]>
-<!--
---><![CDATA[             value="^package.*|^import.*|href\s*=\s*&quot;[^&quot;]*&quot;|http://|https://|ftp://|^ *\* .*(@see|\{@link)"/>]]>
-<!--
+                  <replacevalue><![CDATA[<!-- Begin ao-checkstyle-config removed]]>&#xA;<!--
+--><![CDATA[    <property name="ignorePattern"]]>&#xA;<!--
+--><![CDATA[             value="^package.*|^import.*|href\s*=\s*&quot;[^&quot;]*&quot;|http://|https://|ftp://"/>]]>&#xA;<!--
+--><![CDATA[         End ao-checkstyle-config removed -->]]>&#xA;<!--
+--><![CDATA[    <!-- Begin ao-checkstyle-config added -->]]>&#xA;<!--
+--><![CDATA[    <!-- Allow long javadoc links -->]]>&#xA;<!--
+--><![CDATA[    <property name="ignorePattern"]]>&#xA;<!--
+--><![CDATA[             value="^package.*|^import.*|href\s*=\s*&quot;[^&quot;]*&quot;|http://|https://|ftp://|^ *\* .*(@see|\{@link)"/>]]>&#xA;<!--
 --><![CDATA[    <!-- End ao-checkstyle-config added -->]]></replacevalue>
                 </replace>
                 <condition property="checkstyle-configuration.xml.matches" value="true">
