@@ -37,9 +37,9 @@ along with ao-checkstyle-config.  If not, see <https://www.gnu.org/licenses/>.
     shortTitle="Changelog"
     tocLevels="1"
     datePublished="2022-04-14T21:16:36-05:00"
-    dateModified="2026-05-08T17:01:07Z"
+    dateModified="2026-05-26T15:25:21Z"
   >
-    <c:set var="latestRelease" value="1.5.0" />
+    <c:set var="latestRelease" value="13.4.2" />
     <c:if test="${
       fn:endsWith('@{project.version}', '-SNAPSHOT')
       and !fn:endsWith('@{project.version}', '-POST-SNAPSHOT')
@@ -51,12 +51,21 @@ along with ao-checkstyle-config.  If not, see <https://www.gnu.org/licenses/>.
         groupId="@{project.groupId}"
         artifactId="@{documented.artifactId}"
         scmUrl="@{project.scm.url}"
-      >
-        <ul>
-          <li>Updated to <ao:a href="https://checkstyle.org/releasenotes.html#Release_13.4.2">Checkstyle 13.4.2</ao:a>.</li>
-        </ul>
-      </changelog:release>
+      />
     </c:if>
+
+    <changelog:release
+      projectName="@{documented.name}"
+      version="13.4.2"
+      datePublished="2026-05-26T15:25:21Z"
+      groupId="@{project.groupId}"
+      artifactId="@{documented.artifactId}"
+      scmUrl="@{project.scm.url}"
+    >
+      <ul>
+        <li>Updated to <ao:a href="https://checkstyle.org/releasenotes.html#Release_13.4.2">Checkstyle 13.4.2</ao:a>.</li>
+      </ul>
+    </changelog:release>
 
     <changelog:release
       projectName="@{documented.name}"
